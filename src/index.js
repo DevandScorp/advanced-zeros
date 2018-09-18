@@ -11,7 +11,7 @@ module.exports = function getZerosCount(number, base) {
             k += a;
         }
     }
-    /**Фнукция,возвращающая двумерный массив,состоящий из массивов,имеющих следующую структуру: [простое число,его степень в разложении]*/
+    /**Функция,возвращающая двумерный массив,состоящий из массивов,имеющих следующую структуру: [простое число,его степень в разложении]*/
     function getPrime(num){
         var div = 2,res=[],max=0,degree=0;
         while(num>1){
@@ -27,6 +27,9 @@ module.exports = function getZerosCount(number, base) {
         return res;
     }
     var prime = getPrime(base);
+    /**
+     * Вместо первых элементов подставляем максимальные степени
+     */
     for(let a of prime){
         a[0]=maxFactPower(a[0],number);
     }
